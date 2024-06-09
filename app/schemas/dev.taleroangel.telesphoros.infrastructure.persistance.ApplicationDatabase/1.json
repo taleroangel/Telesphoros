@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "220dfde804c8a66efff30f54d2f130a1",
+    "identityHash": "383cd3397db79e9bf70bfc8faae7b4ad",
     "entities": [
       {
         "tableName": "Medicine",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `days_t` INTEGER NOT NULL, `days_c` INTEGER NOT NULL, `image` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `days_t` INTEGER NOT NULL, `days_c` INTEGER NOT NULL, `image` TEXT)",
         "fields": [
           {
             "fieldPath": "uid",
@@ -36,7 +36,7 @@
             "fieldPath": "image",
             "columnName": "image",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -52,7 +52,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '220dfde804c8a66efff30f54d2f130a1')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '383cd3397db79e9bf70bfc8faae7b4ad')"
     ]
   }
 }

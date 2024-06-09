@@ -16,5 +16,10 @@ data class Medicine(
     @ColumnInfo("name") val name: String,
     @ColumnInfo("days_t") val daysTotal: Int,
     @ColumnInfo("days_c") val daysCurrent: Int,
-    @ColumnInfo("image") val image: LocalFilePath,
-) : Parcelable
+    @ColumnInfo("image") val image: LocalFilePath? = null,
+) : Parcelable {
+    /**
+     * Provided only for extension functions
+     */
+    companion object
+}

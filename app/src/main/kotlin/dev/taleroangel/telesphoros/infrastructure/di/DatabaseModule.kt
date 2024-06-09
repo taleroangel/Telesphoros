@@ -16,7 +16,7 @@ import dev.taleroangel.telesphoros.infrastructure.persistance.DATABASE_NAME
  */
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class DatabaseModule {
+object DatabaseModule {
 
     /**
      * Provide raw database access

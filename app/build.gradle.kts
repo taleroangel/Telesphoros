@@ -30,6 +30,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            isDebuggable = true
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -91,7 +94,7 @@ dependencies {
     implementation(libs.bundles.androidx.room)
 
     /* Other Libraries */
-    debugImplementation(libs.faker)
+    implementation(libs.faker)
 
     /* KSP */
     ksp(libs.bundles.ksp)
