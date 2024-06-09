@@ -66,6 +66,7 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 # Jetpack Room
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "androidx-room" }
 
 [bundles]
 
@@ -113,6 +114,7 @@ androidx-navigation = [
 
 androidx-room = [
     "androidx-room-runtime",
+    "androidx-room-ktx"
 ]
 
 
