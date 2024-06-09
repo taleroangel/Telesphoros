@@ -1,10 +1,15 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.androidx.room)
 }
+
+
 
 android {
     namespace = "dev.taleroangel.telesphoros"
@@ -32,22 +37,36 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     buildFeatures {
         compose = true
     }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    room {
+        schemaDirectory("$projectDir/schemas")
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_1_8)
+    }
 }
 
 dependencies {
 
+    /* Android */
     implementation(libs.androidx.core.ktx)
 
     /* Koin */
@@ -67,6 +86,9 @@ dependencies {
 
     /* Jetpack Navigation */
     implementation(libs.bundles.androidx.navigation)
+
+    /* Jetpack Room */
+    implementation(libs.bundles.androidx.room)
 
     /* KSP */
     ksp(libs.bundles.ksp)
