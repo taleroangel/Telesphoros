@@ -90,6 +90,9 @@ dependencies {
     /* Jetpack Room */
     implementation(libs.bundles.androidx.room)
 
+    /* Other Libraries */
+    debugImplementation(libs.faker)
+
     /* KSP */
     ksp(libs.bundles.ksp)
 }

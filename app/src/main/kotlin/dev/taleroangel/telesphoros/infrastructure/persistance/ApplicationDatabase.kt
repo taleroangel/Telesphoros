@@ -6,6 +6,11 @@ import dev.taleroangel.telesphoros.domain.model.Medicine
 import dev.taleroangel.telesphoros.domain.repository.MedicineRepository
 
 /**
+ * Database name
+ */
+const val DATABASE_NAME = "dev.taleroangel.telesphoros.database"
+
+/**
  * Application database definition
  */
 @Database(entities = [Medicine::class], version = 1)
