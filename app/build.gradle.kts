@@ -2,10 +2,11 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.android)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.dagger.hilt)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.parcelize)
-    alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room)
 }
 
@@ -69,12 +70,11 @@ dependencies {
     /* Android */
     implementation(libs.androidx.core.ktx)
 
-    /* Koin */
-    implementation(platform(libs.koin.bom))
-    implementation(libs.bundles.koin)
-
     /* Kotlinx */
     implementation(libs.bundles.kotlinx)
+
+    /* Jetpack Hilt */
+    implementation(libs.bundles.androidx.hilt)
 
     /* Jetpack Lifecycle */
     implementation(libs.bundles.androidx.lifecycle)

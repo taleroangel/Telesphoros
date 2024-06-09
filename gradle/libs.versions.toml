@@ -3,11 +3,11 @@ agp = "8.4.1"
 kotlin = "2.0.0"
 core-ktx = "1.13.1"
 ksp = "2.0.0-1.0.21"
-koin = "3.5.6"
-koin-annotation = "1.3.1"
+dagger = "2.51.1"
 
 kotlinx-coroutines = "1.8.1"
 
+androidx-hilt = "1.2.0"
 androidx-lifecycle = "2.8.1"
 androidx-compose = "2024.05.00"
 androidx-activity-compose = "1.9.0"
@@ -17,6 +17,7 @@ androidx-room = "2.6.1"
 [plugins]
 android = { id = "com.android.application", version.ref = "agp" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
 
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
@@ -29,17 +30,14 @@ androidx-room = { id = "androidx.room", version.ref = "androidx-room" }
 # Android
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 
-# Koin
-koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin" }
-koin-android = { group = "io.insert-koin", name = "koin-android" }
-koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose" }
-
-# Koin Annotations
-koin-annotations = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koin-annotation" }
-koin-ksp-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koin-annotation" }
+# Dagger
+dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
+dagger-hilt-ksp = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger" }
 
 # Kotlinx
 kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+
+# Jetpack Hilt
 
 # Jetpack Lifecycle
 androidx-lifecycle-ksp = { group = "androidx.lifecycle", name = "lifecycle-compiler", version.ref = "androidx-lifecycle" }
@@ -73,17 +71,15 @@ androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = 
 ksp = [
     "androidx-lifecycle-ksp",
     "androidx-room-compiler",
-    "koin-ksp-compiler",
-]
-
-koin = [
-    "koin-android",
-    "koin-androidx-compose",
-    "koin-annotations",
+    "dagger-hilt-ksp"
 ]
 
 kotlinx = [
     "kotlinx-coroutines",
+]
+
+androidx-hilt = [
+    "dagger-hilt"
 ]
 
 androidx-lifecycle = [
