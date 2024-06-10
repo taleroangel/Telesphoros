@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Telesphoros</string>
+    <string name="timer">Timer</string>
+    <string name="image_missing">Missing image</string>
+    <string name="medicines">Medicines</string>
+    <string name="medicine_days_of"><b>%1$d</b> out of <b>%1$d</b> days</string>
+    <string name="hours">Each %d hours</string>
+    <string name="add_medicine">Add medicine</string>
 </resources>

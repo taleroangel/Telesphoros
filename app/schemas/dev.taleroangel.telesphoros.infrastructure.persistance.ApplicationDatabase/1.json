@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "383cd3397db79e9bf70bfc8faae7b4ad",
+    "identityHash": "916c5c35fcc1025e023426a77e6afd04",
     "entities": [
       {
         "tableName": "Medicine",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `days_t` INTEGER NOT NULL, `days_c` INTEGER NOT NULL, `image` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `type` TEXT, `days_t` INTEGER NOT NULL, `days_c` INTEGER NOT NULL, `each_hrs` INTEGER NOT NULL, `image` TEXT, `next_at` INTEGER NOT NULL, `delayed_to` INTEGER, `taken_at` INTEGER NOT NULL, `finished` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "uid",
@@ -21,6 +21,12 @@
             "notNull": true
           },
           {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
             "fieldPath": "daysTotal",
             "columnName": "days_t",
             "affinity": "INTEGER",
@@ -33,10 +39,40 @@
             "notNull": true
           },
           {
+            "fieldPath": "eachHrs",
+            "columnName": "each_hrs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
             "fieldPath": "image",
             "columnName": "image",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "nextAt",
+            "columnName": "next_at",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "delayedTo",
+            "columnName": "delayed_to",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "takenAt",
+            "columnName": "taken_at",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "finished",
+            "columnName": "finished",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -52,7 +88,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '383cd3397db79e9bf70bfc8faae7b4ad')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '916c5c35fcc1025e023426a77e6afd04')"
     ]
   }
 }

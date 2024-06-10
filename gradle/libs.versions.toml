@@ -6,6 +6,7 @@ ksp = "2.0.0-1.0.21"
 dagger = "2.51.1"
 
 kotlinx-coroutines = "1.8.1"
+kotlinx-datetime = "0.6.0"
 
 androidx-hilt = "1.2.0"
 androidx-lifecycle = "2.8.1"
@@ -38,6 +39,7 @@ dagger-hilt-ksp = { group = "com.google.dagger", name = "hilt-compiler", version
 
 # Kotlinx
 kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
 # Jetpack Hilt
 
@@ -76,15 +78,16 @@ faker = { group = "io.bloco", name = "faker", version.ref = "faker" }
 ksp = [
     "androidx-lifecycle-ksp",
     "androidx-room-compiler",
-    "dagger-hilt-ksp"
+    "dagger-hilt-ksp",
 ]
 
 kotlinx = [
     "kotlinx-coroutines",
+    "kotlinx-datetime",
 ]
 
 androidx-hilt = [
-    "dagger-hilt"
+    "dagger-hilt",
 ]
 
 androidx-lifecycle = [
